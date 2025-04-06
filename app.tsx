@@ -1,6 +1,8 @@
-import { StatusBar } from 'expo-status-bar';
 import { useFonts, Inter_400Regular, Inter_700Bold } from '@expo-google-fonts/inter';
-import { ActivityIndicator, StyleSheet, Text, View } from 'react-native';
+import { ThemeProvider } from 'styled-components/native';
+import { ActivityIndicator } from 'react-native';
+import { StatusBar } from 'expo-status-bar';
+import { theme } from '@/global/theme';
 import { Main } from '@/screens/main';
 
 export function App() {
@@ -10,18 +12,9 @@ export function App() {
   });
 
   return (
-    <View style={styles.container}>
-      <StatusBar style="auto" />
+    <ThemeProvider theme={theme}>
+      <StatusBar style="light" backgroundColor="transparent" translucent />
       {fontsLoaded ? <Main /> : <ActivityIndicator size="large" />}
-    </View>
+    </ThemeProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#ffffff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
