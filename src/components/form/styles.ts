@@ -33,10 +33,3 @@ export const Button = styled.TouchableOpacity`
     background-color: ${theme.colors.blueDark};
   `}
 `;
-
-export const PlusIcon = styled.Image.attrs({
-  source: require('@/assets/plus.png'),
-})`
-  width: 20px;
-  height: 20px;
-`;
